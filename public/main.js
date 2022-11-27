@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     var inputText=document.getElementById('inputText');
     var clearTextBtn=document.getElementById('clearTextBtn');

@@ -13,6 +13,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Main Routes - simplified for now, including main pages: spaces, convert
 // renders index.ejs
 router.get("/", homeController.getIndex);
+
+router.get("/index", homeController.getIndex);
 // get profile page - located in posts controller
 router.get("/profile", ensureAuth, postsController.getProfile);
 // get spaces
