@@ -11,7 +11,7 @@ module.exports = {
       // Find all the completed orders
       const completeTasks = await Progress.find({taskStatus: "completed" });
       // sending the unfullfilled and fulfilled orders to the ejs to create ejs
-      res.render("progress.ejs",{user:req.user, tasks: tasks, completeTasks: completeTasks});
+      res.render("progress.ejs", {user:req.user, tasks: tasks, completeTasks: completeTasks});
     } catch (err) {
       console.log(err);
     }
@@ -20,10 +20,10 @@ module.exports = {
   getTask: async (req, res) => {
     try {
       // this is the order schema for post for the order page ejs
-      const tasks = await Progress.find({ clientName: req.body.clientName }).sort({createdAt: "desc"});
+      const tasks = await Progress.find({ clientName: req.body.clientName })
       
       // objs from data base, located in Order schema. rendering on order ejs
-      res.render("progress.ejs", { 
+      res.render("/progress", { 
         clientName: req.body.clientName,
         taskDescription: req.body.taskDescription
        });
@@ -41,7 +41,6 @@ module.exports = {
       });
       console.log("task has been added!");
       res.redirect('/progess');
-
     } catch (err) {
       console.log(err);
     }
