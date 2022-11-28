@@ -14,10 +14,12 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/profile"><img src="imgs/community-icon.png" alt="" height="35" class="d-inline-block align-text-top"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="/profile"><img src="imgs/community-icon.png" alt="" height="35"
+          class="d-inline-block align-text-top"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,70 +43,21 @@
     </div>
   </nav>
 
-  
+  <form action="/text/postText/" enctype = “multipart/form-data” method="POST" class="col-3">
+    <input type="file" id="inpFile" name="inpFile">
+    <button type="submit" id="btnUpload">Upload</button>
+    <br>
+    <br>
+  </form>
 
-  <h1 class="display-4  text-center">Convert PDF Converter</h1>
-
-  <div class="row"><label for="formFile" class="form-label">Upload a File:</label>
-    </row>
-    <form class="row">
-      <div class="col-auto">
-        <input class="form-control" type="file" id="formFile uploadPDF">
-        <span id='currentPageNo'></span>of<span id='totalPages'></span>
-      </div>
-      <div class="col-auto">
-        <button type="submit" id="uploadPDFBtn" class="btn btn-primary mb-3">Start Upload</button>
-      </div>
-    </form>
-
-    <div class='col-5 mr-0'>
-      <div id='page-preview' class='small border text-center'></div>
-      <small><strong>🔄 Page Text Extraction</strong></small>
-      <div class="progress">
-        <div id="ocrPageProgress" class="progress-bar progress-bar-striped progress-bar-animated"></div>
-      </div>
-      <small id='ocrPageProgressStatus' class='small'></small>
-    </div>
-    <div class='col-3 mr-0'>
-      <small class='text-dark'>📄 Processed Page(s)</small>
-      <small id='processedPages' class='border small'></small>
-    </div>
-
-    <hr>
-    <div class='row'>
-      <div class='col-12'>
-        <div id='controllerCard' class="card rounded-0">
-          <div class="card-header p-1">
-            <p class='m-0'><button type="button"
-                class="btn btn-light border-primary btn-sm rounded-circle text-primary ml-2" data-toggle="popover"
-                data-title="🔎 User Guide 👀" data-dismissible="true" data-placement="right"
-                data-content="<p class='mb-0'><p>❶ ⎆⎃ <small class='text-muted'>Select <span class='badge badge-light rounded-circle border border-info text-info'><small>⯈</small></span> to listen to text․</small></p><p>❷ ⎇⎀ <small class='text-muted'>Manual edits & inputs are enabled in the text field․</small></p><p>❸ ⎁⎂ <small class='text-muted'>Upload an image file/pdf doc for text extraction. Upon completion, output shall auto-append itself to existing input content․</small></p><p><strong>ℹ Speech Controls</strong><ul><li>▶⇆⏸ <small class='text-info'>Toggle between play﹠pause.</small></li><li>▶→⏸⇆⏯ <small class='text-info'>Speech shall resume if paused before completion (assuming no stop command is triggered.).</small></li><li>⏹ <small class='text-danger'>Stops the speech regardless of completion status.</small></li></ul></p></p>"><small>👆*</small></button>
-              <span class='mr-1 ml-1'>❝ᴛᴇxᴛ2sᴘᴇᴇᴄʜ❞ ᴀᴘᴘ</span> <button id='clearTextBtn'
-                class="btn btn-sm btn-light text-danger border-danger rounded-0 ml-2 mr-2" type='button'>🆑ᴇᴀʀ
-              </button><span class='float-right'><button id='speakBtn'
-                  class="btn btn-sm btn-light text-info border-info rounded-circle pl-2 pr-2 pt-0 pb-1"
-                  type='button'><small>▶</small></button> <button id='stopBtn'
-                  class="btn btn-sm btn-light text-danger border-danger rounded-circle pl-2 pr-2 pt-0 pb-1"
-                  type='button'><small>■</small></button> <button id='downloadTextContent'
-                  class="btn btn-sm btn-light text-primary border-primary rounded-0 pl-2 pr-2 pt-0 pb-1 ml-4"
-                  type='button'><small>┏🠋┓ ᴇxᴘᴏʀᴛ ᴀs ᴘʟᴀɪɴᴛᴇxᴛ…</small></button></span></p>
-          </div>
-          <div class="card-body p-0">
-            <textarea id='inputText' class="form-control rounded-0 m-0 border-0"></textarea>
-          </div>
-        </div>
-      </div>
+  <textarea style="width: 300px; height: 150px;" name="resultText" id="resultText"
+  placeholder="Your PDF text will appear here..."></textarea>
 
 
-    </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-    <script src='tesseract/tesseract.min.js'></script>
-    <script src='pdf/pdf.min.js'></script>'
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

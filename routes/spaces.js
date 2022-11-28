@@ -5,6 +5,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 // get spaces
 
-router.get("/spaces", ensureAuth, spacesController.getSpaces);
+router.get("/getSpaces", ensureAuth, spacesController.getSpaces);
+
+
 
 module.exports = router; 

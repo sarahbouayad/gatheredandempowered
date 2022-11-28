@@ -1,4 +1,4 @@
-const Post = require("../models/Post");
+const Text = require("../models/Text")
 
 
 module.exports = {
@@ -6,10 +6,22 @@ module.exports = {
   getConvert: async (req, res) => {
     console.log('navigated to convert')
     try {
-      const posts = await Post.find({ user: req.user.id });
+      res.render("convert.ejs", {user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  postText: async (req, res) => {
+    console.log('extracting Text')
+    try {
+      const extractedText = await Text.find({ resultText:req.body.resultText, user: req.user.id })
+      const formData = new FormData(); 
+      formData.append("pdfFile")
       res.render("convert.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
+
+
 };
