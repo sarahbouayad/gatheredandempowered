@@ -17,8 +17,6 @@ router.get("/", homeController.getIndex);
 router.get("/index", homeController.getIndex);
 // get profile page - located in posts controller
 router.get("/profile", ensureAuth, postsController.getProfile);
-// get spaces
-router.get("/spaces", ensureAuth, spacesController.getSpaces);
 // get convert page 
 router.get("/convert", ensureAuth, convertController.getConvert);
 // get progress page 

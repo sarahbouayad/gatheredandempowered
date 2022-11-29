@@ -5,7 +5,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 // get spaces
 
-router.get("/getSpaces", ensureAuth, spacesController.getSpaces);
+router.get("/", ensureAuth, spacesController.getSpacesList);
+router.get("/:room", spacesController.getSpaces);
 
 
 

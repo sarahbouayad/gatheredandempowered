@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Spaces</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/profile"><img src="imgs/community-icon.png" alt="" height="35"
+                    class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/convert">Convert PDF Tool</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link"> | </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/progress">Progress Tracker</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6">
+                <div>
+                    <p><strong>User Name</strong>: <%= user.userName %>
+                    </p>
+                    <p><strong>Email</strong>: <%= user.email %>
+                    </p>
+                    <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <ul>
+    <li><a href="/spaces/newlyarrived">Newly Arrived</a></li>
+    <li><a href="/spaces/eatingtogether">Let's Eat Together!</a></li>
+    <li><a href="/spaces/cookwithme">Cook With Me</a></li>
+    <li><a href="/spaces/sportsandsocial">Sports and Social</a></li>
+    <li><a href="/spaces/thearts">The Arts</a></li>
+   </ul>
+
+
+
+
+    <h1 class="text-center">Gathered and Empowered Community Space</h1>
+    <p class="message text-center">Enjoy your chat!</p>
+    <div id="video-grid"></div>
+    </main>
+    <footer>
+        <p class="copy text-center"> Copyright © 2022 Gathered and Empowered. All rights reserved.</p>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

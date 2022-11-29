@@ -8,13 +8,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script>
+        const ROOM_ID = "<%= roomId %>"
+    </script>
+    <script src="/socket.io/socket.io.js" defer>
+    </script>
+    <script src="/script.js" defer>
+    </script>
 
     <style>
         #video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 300px);
-            grid-auto-rows: 300px;
+            grid-template-columns: repeat(auto-fill, 500px);
+            grid-auto-rows: 400px;
+            border: 1px solid black; 
         }
 
         video {
@@ -23,12 +32,12 @@
             object-fit: cover;
         }
     </style>
-</head>
 
+</head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/profile"><img src="imgs/community-icon.png" alt="" height="35"
+            <a class="navbar-brand" href="/profile"><img src="/imgs/community-icon.png" alt="" height="35"
                     class="d-inline-block align-text-top"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -68,7 +77,6 @@
             </div>
         </div>
     </div>
-
     <h1 class="text-center">Gathered and Empowered Community Space</h1>
     <p class="message text-center">Enjoy your chat!</p>
     <div id="video-grid"></div>
@@ -78,15 +86,8 @@
     </footer>
 
 
-    <script>
-        const ROOM_ID = "<%= roomId %>"
-    </script>
-    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
-    <script src="/socket.io/socket.io.js" defer></script>
-    <script>
-        var socket = io.connect();
-    </script>
-    <script src="script.js" defer></script>
+   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>

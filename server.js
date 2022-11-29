@@ -75,7 +75,6 @@ io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     console.log(roomId, userId);
     socket.join(roomId);
-    // socket.to(roomId).broadcast.emit('user-connected', userId)
     socket.broadcast.to(roomId).emit("user-connected", userId);
 
     socket.on("disconnect", () => {
@@ -93,6 +92,6 @@ app.use("/convert", convertRoutes);
 app.use("/progress", progressRoutes);
 
 //Server Running
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 });
