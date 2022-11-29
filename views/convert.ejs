@@ -43,16 +43,27 @@
     </div>
   </nav>
 
-  <form action="/text/postText/" enctype = “multipart/form-data” method="POST" class="col-3">
+  
     <input type="file" id="inpFile" name="inpFile">
     <button type="submit" id="btnUpload">Upload</button>
     <br>
     <br>
-  </form>
 
-  <textarea style="width: 300px; height: 150px;" name="resultText" id="resultText"
-  placeholder="Your PDF text will appear here..."></textarea>
 
+  
+    <select class="lang" name="lang">
+      <option name="fr" value="fr">French</option>
+      <option name="es" value="es">Spanish</option>
+    </select>
+    <button type="submit" id="translateBtn">Translate</button>
+
+  <p id="resultText">
+
+  </p>
+
+  <p id="translatedText">
+
+  </p>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

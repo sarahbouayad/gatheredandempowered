@@ -1,129 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Progress</title>
+  <title>Progress</title>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/profile"><img src="imgs/community-icon.png" alt="" height="35"
-              class="d-inline-block align-text-top"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/convert">Convert PDF Tool</a>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link"> | </span>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/spaces">Sanctuary Spaces</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <h1>Progress</h1>
-    <h2 class=""><a href="/profile">Profile</a></h2>
-    
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-6">
-                <div>
-                    <p><strong>User Name</strong>: <%= user.userName %></p>
-                    <p><strong>Email</strong>: <%= user.email %></p>
-                    <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <form class="tasks" action="/progress/createTask/" method="POST">
-        <input type="text" placeholder="Enter Name" name="clientName" style="margin: 1%;">
-        <input type="text" placeholder="temptext" name="taskDescription">
-        <button class="submit btn-sm btn-light" type="submit">Submit</button>
-    </form>
-
-      <div class="mt-5">
-        <h2>Pending Tasks</h2>
-        <h6>Once tasks are completed, mark it as complete</h6>
-        <br>
-        <hr>
-        <% if(tasks.length == 0) {%>
-          <p class="p">No Tasks!</p>
-        <%} %>
-        <ul>
-          <% for(var i=0; i<tasks.length; i++) { %>
-            <div class="pendingTasks">
-            <li class="col-6 justify-content-between mt-5">
-              <span>Name: <%= tasks[i].clientName %></span>
-              <%= tasks[i].taskDescription %> 
-
-
-              <form 
-                class="col-1"
-                action="/progress/completeTasks/<%= tasks[i].id %>?_method=PUT"
-                method="POST"
-              >
-              <button class="btn btn-primary bi bi-check-square-fill" type="submit"></button>
-            </form>
-
-            </li>
-          </div>
-        <% } %> 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/profile"><img src="imgs/community-icon.png" alt="" height="35"
+          class="d-inline-block align-text-top"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/convert">Convert PDF Tool</a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link"> | </span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/spaces">Sanctuary Spaces</a>
+          </li>
         </ul>
-      
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
       </div>
     </div>
-  <div class="col-6">
-    <ul class="row list-unstyled">
-      <h2>Completed Tasks</h2>
-      <h6>Keep Track Completed Tasks</h6>
-      <br>
-      <br>
-      <hr>
-      <li>
-      <% for(let i=0; i < completeTasks.length; i++) { %>
-        <span>completed: <%= completeTasks[i].clientName %> task</span>
-        <p>Task: <%= completeTasks[i].taskDescription %></p>
-        <!-- using form to pass the id of the post as a query parameter to be able to target which post to delete -->
-        <form
-        action="/progress/deleteTask/<%= completeTasks[i].id %>?_method=DELETE" 
-        method="POST" 
-        class="col-3"
-        >
-        <button class="btn btn-primary bi bi-trash" type="submit"></button>
-        </form>
-      </li>
-      <% } %> 
-    </ul>
-  </div>  
-</div>
-</div>
+  </nav>
+
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-sm">
+        <% if (user.email) { %>
+          <form class=”form-inline” class="" action="/messages" method="POST" role="form">
+            <div class="form-group">
+              <div class="col-6 col-sm-4">
+                <h4><strong>Keep It Going, </strong>
+                  <%= user.userName %><br>
+                </h4>
+              </div>
+            </div>
+          </form>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <form class="tasks" action="/progress/createTask/" method="POST">
+      <input type="text" placeholder="Enter Name" name="clientName" style="margin: 1%;">
+      <input type="text" placeholder="temptext" name="taskDescription">
+      <button class="submit btn-sm btn-light" type="submit">Submit</button>
+    </form>
+  </div>
+ 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Pending Tasks</h2>
+            <h6>Once tasks are completed, mark it as complete</h6>
+            <% if(tasks.length==0) {%>
+              <p class="p">No Tasks!</p>
+              <%} %>
+                <ul class="row list-unstyled">
+                  <% for(var i=0; i<tasks.length; i++) { %>
+                    <div class="pendingTasks">
+                      <li class="col-6 justify-content-between mt-5">
+                        <span>Name: <%= tasks[i].clientName %></span>
+                        <%= tasks[i].taskDescription %>
+
+
+                          <form class="col-1" action="/progress/completeTasks/<%= tasks[i].id %>?_method=PUT"
+                            method="POST">
+                            <button class="btn btn-primary bi bi-check-square-fill" type="submit"></button>
+                          </form>
+
+                      </li>
+                    </div>
+                  <% } %>
+                </ul>
+
+          </div>
+
+          <div class="col-md-6">
+            <h2>Completed Tasks</h2>
+            <h6>Keep Track Completed Tasks</h6>
+            <% if(completeTasks.length==0) {%>
+              <p class="p">Good Job!</p>
+              <%} %>
+            <ul class="row list-unstyled">
+              <li>
+                <% for(let i=0; i < completeTasks.length; i++) { %>
+                  <span>Completed: <%= completeTasks[i].clientName %> task</span>
+                  <p>Task: <%= completeTasks[i].taskDescription %>
+                  </p>
+                  <!-- using form to pass the id of the post as a query parameter to be able to target which post to delete -->
+                  <form action="/progress/deleteTask/<%= completeTasks[i].id %>?_method=DELETE" method="POST"
+                    class="col-3">
+                    <button class="btn btn-primary bi bi-trash" type="submit"></button>
+                  </form>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
 
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>   
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"></script>
     <script src="main.js"></script>
 
 </body>
+
 </html>

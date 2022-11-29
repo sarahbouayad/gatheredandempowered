@@ -8,9 +8,9 @@ module.exports = {
     try {
       // set all tasks to pending
       const tasks = await Progress.find({taskStatus: "pending" });
-      // Find all the completed orders
+      // Find all the completed tasks
       const completeTasks = await Progress.find({taskStatus: "completed" });
-      // sending the unfullfilled and fulfilled orders to the ejs to create ejs
+      // sending the unfullfilled and fulfilled tasks to the ejs to create ejs
       res.render("progress.ejs", {user:req.user, tasks: tasks, completeTasks: completeTasks});
     } catch (err) {
       console.log(err);

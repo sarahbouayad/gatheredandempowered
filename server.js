@@ -16,6 +16,7 @@ const progressRoutes = require("./routes/progress")
 const fileUpload = require("express-fileupload");
 
 
+
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
@@ -39,13 +40,18 @@ app.use(fileUpload());
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.json());
 
 //Logging
 app.use(logger("dev"));
 
 //Use forms for put / delete
 app.use(methodOverride("_method"));
+
+// 
+app.use(express.json({
+  type: ['application/json', 'text/plain']
+}))
 
 // Setup Sessions - stored in MongoDB
 app.use(
@@ -75,20 +81,6 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
       socket.broadcast.to(roomId).emit("user-disconnected", userId);
     });
-  });
-});
-
-
-// pdf logic
-
-app.post("/postText", (req, res) => {
-  if (!req.files && !req.files.pdfFile) {
-      res.status(400);
-      res.end();
-  }
-
-  pdfParse(req.files.pdfFile).then(result => {
-      res.send(result.text);
   });
 });
 
