@@ -8,11 +8,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="https://kit.fontawesome.com/43daf91e79.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-image:url('imgs/blue.jpg');background-repeat: no-repeat;">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -43,27 +43,61 @@
     </div>
   </nav>
 
+  <div class="item-wrapper">
+    <div class="item">
+      <div class="item-inner">
+        <div class="item-content">
+          <div class="file-upload">
+            <label for="file-upload"></label>
+              <div class="h-100">
+                <div class="dplay-tbl">
+                 <div class="dplay-tbl-cell">
+                     <i class="fa fa-cloud-upload"></i>
+                     <h5><b>Choose Your PDF to Upload</b></h5>
+                     <input type="file" id="inpFile" name="inpFile">
+                     <h6 class="mt-10 mb-70">Or Drop Your PDF Here</h6>
+
+                     <button type="submit" id="btnUpload">Upload</button>
+                 </div>
+                 <a href="/storedTexts" type="button">See Previously Translated Texts</a>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="height:100px;">
+        <select class="lang" name="lang" style="width: 50%">
+          <option name="fr" value="fr">French</option>
+          <option name="es" value="es">Spanish</option>
+        </select>
+        <button type="submit" id="translateBtn">Translate</button>
+      </div>
+      <div class="col-md-6" style="height: 100px;">
+        
+      </div>
+    </div>
+  </div>
+
+ 
   
-    <input type="file" id="inpFile" name="inpFile">
-    <button type="submit" id="btnUpload">Upload</button>
-    <br>
-    <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="height: 600px;">
+        <textarea id="resultText"></textarea>
+      </div>
+      <div class="col-md-6" style="height:600px;">
+        <textarea class="textarea-scrollbar scrollbar-outer" name="translatedText" id="translatedText" ></textarea>
+      </div>
+    </div>
+  </div>
 
 
-  
-    <select class="lang" name="lang">
-      <option name="fr" value="fr">French</option>
-      <option name="es" value="es">Spanish</option>
-    </select>
-    <button type="submit" id="translateBtn">Translate</button>
 
-  <p id="resultText">
 
-  </p>
 
-  <p id="translatedText">
-
-  </p>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

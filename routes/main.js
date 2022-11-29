@@ -25,6 +25,8 @@ router.get("/convert", ensureAuth, convertController.getConvert);
 router.get("/progress", ensureAuth, progressController.getProgress);
 // get about page 
 router.get("/about", ensureAuth, aboutController.getAbout);
+// get stored Texts page
+router.get("/storedTexts", ensureAuth,convertController.getStoredTexts);
 // get login page 
 router.get("/login", authController.getLogin);
 // post login page
