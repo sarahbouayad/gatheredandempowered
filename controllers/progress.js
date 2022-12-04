@@ -18,6 +18,7 @@ module.exports = {
   },
   // get specific tasks
   getTask: async (req, res) => {
+    console.log("the task is being got")
     try {
       // this is the order schema for post for the order page ejs
       const tasks = await Progress.find({ clientName: req.body.clientName })
@@ -40,7 +41,7 @@ module.exports = {
         taskDescription: req.body.taskDescription
       });
       console.log("task has been added!");
-      res.redirect('/progess');
+      res.redirect('/progress');
     } catch (err) {
       console.log(err);
     }

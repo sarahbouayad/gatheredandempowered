@@ -16,10 +16,11 @@ module.exports = {
   // get post to save document
   postText: async (req, res) => {
     console.log("extracting Text");
+    console.log(req.body)
     try {
       if (!req.files && !req.files.pdfFile) {
         res.status(400);
-        res.end();
+        res.send("Wrong File Type!");
       }
       pdfParse(req.files.pdfFile).then((result) => {
         console.log(result);
