@@ -5,6 +5,10 @@ const resultText = document.getElementById("resultText");
 const translatedText = document.getElementById("translatedText");
 const lang = document.querySelector(".lang");
 
+
+
+// toggle collapse
+
 // upload button, pdf-parsed
 btnUpload.addEventListener("click", () => {
   const formData = new FormData();
