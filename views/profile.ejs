@@ -1,237 +1,189 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dashboard</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/43daf91e79.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
 
-  <body>
-    <!-- navigation bar -->
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/43daf91e79.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link
+        href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300;500&family=Roboto:wght@100;300&&family=Tangerine&display=swap"
+        rel="stylesheet">
+</head>
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm bg-dark">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <span class="ml-3 font-weight-bold"
-            ><img src="imgs/community-icon.png" style="height: 40px" /> Gathered
-            & Empowered</span
-          >
-        </a>
-        <button
-          class="navbar-toggler navbar-toggler-right border-0"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar4"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body style="background-color: rgba(253, 253, 253, 0.901); ">
+  <!-- navigation bar -->
 
-        <div class="collapse navbar-collapse" id="navbar4">
-          <ul class="navbar-nav mr-auto pl-lg-4">
-            <li class="nav-item px-lg-2 active">
-              <a class="nav-link" href="#">
-                <span class="d-inline-block d-lg-none icon-width"
-                  ><i class="fas fa-home"></i></span
-                >Dashboard</a
-              >
-            </li>
-            <li class="nav-item px-lg-2">
-              <a class="nav-link" href="/about"
-                ><span class="d-inline-block d-lg-none icon-width"
-                  ><i class="fas fa-spa"></i></span
-                >About</a
-              >
-            </li>
-            <li class="nav-item px-lg-2">
-              <a class="nav-link" href="/convert"
-                ><span class="d-inline-block d-lg-none icon-width"
-                  ><i class="fas fa-spa"></i></span
-                >Convert PDF</a
-              >
-            </li>
-            <li class="nav-item px-lg-2">
-              <a class="nav-link" href="/spaces"
-                ><span class="d-inline-block d-lg-none icon-width"
-                  ><i class="fas fa-spa"></i></span
-                >Sanctuary Spaces</a
-              >
-            </li>
-            <li class="nav-item px-lg-2">
-              <a class="nav-link" href="/progress"
-                ><span class="d-inline-block d-lg-none icon-width"
-                  ><i class="fas fa-spa"></i></span
-                >Progress</a
-              >
-            </li>
-
-            <li class="nav-item px-lg-2">
-              <a class="nav-link" href="/logout"
-                ><span class="d-inline-block d-lg-none icon-width"
-                  ><i class="far fa-envelope"></i></span
-                >Logout</a
-              >
-            </li>
-            <li class="nav-item px-lg-2">
-              <a class="nav-link" href="#"
-                ><span class="d-inline-block d-lg-none icon-width"
-                  ><i class="far fa-envelope"></i></span
-                >Contact</a
-              >
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto mt-3 mt-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com/sarahbouayad"
-              >
-                <i class="fab fa-twitter"></i
-                ><span class="d-lg-none ml-3">Twitter</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/sarahbouayad/"
-              >
-                <i class="fab fa-linkedin"></i
-                ><span class="d-lg-none ml-3">Linkedin</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- cols for lists -->
-
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm bg-dark">
     <div class="container">
-      <br />
-      <div class="row">
-        <div class="col-sm">
-          <% if (user.email) { %>
-          <form
-            class="”form-inline”"
-            class=""
-            action="/messages"
-            method="POST"
-            role="form"
-          >
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="ml-3 font-weight-bold"><img src="imgs/community-icon.png" style="height: 40px" /> Gathered
+          & Empowered</span>
+      </a>
+      <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+        data-target="#navbar4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav mr-auto pl-lg-4">
+          <li class="nav-item px-lg-2 active">
+            <a class="nav-link" href="#">
+              <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Dashboard</a>
+          </li>
+          <li class="nav-item px-lg-2">
+            <a class="nav-link" href="/convert"><span class="d-inline-block d-lg-none icon-width"><i
+                  class="fas fa-spa"></i></span>Translate PDF</a>
+          </li>
+          <li class="nav-item px-lg-2">
+            <a class="nav-link" href="/spaces"><span class="d-inline-block d-lg-none icon-width"><i
+                  class="fas fa-spa"></i></span>Sanctuary Spaces</a>
+          </li>
+          <li class="nav-item px-lg-2">
+            <a class="nav-link" href="/progress"><span class="d-inline-block d-lg-none icon-width"><i
+                  class="fas fa-spa"></i></span>Progress</a>
+          </li>
+
+          <li class="nav-item px-lg-2">
+            <a class="nav-link" href="/logout"><span class="d-inline-block d-lg-none icon-width"><i
+                  class="far fa-envelope"></i></span>Logout</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/sarahbouayad">
+              <i class="fab fa-twitter"></i><span class="d-lg-none ml-3">Twitter</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/sarahbouayad/">
+              <i class="fab fa-linkedin"></i><span class="d-lg-none ml-3">Linkedin</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- cols for lists -->
+
+  <div class="container">
+    <br />
+    <div class="row">
+      <div class="col-sm">
+        <% if (user.email) { %>
+          <form class="”form-inline”" class="" action="/messages" method="POST" role="form">
             <div class="form-group">
               <div class="col-6 col-sm-4">
-                <h4>
-                  <strong>Welcome Back, </strong> <%= user.userName %><br />
+                <h4 class="welcomeBackText">
+                  <strong>Welcome Back,</strong>
+                  <%= user.userName %><br />
                 </h4>
               </div>
             </div>
           </form>
-        </div>
       </div>
-      <br />
-
-      <div></div>
-      <div class="card-group">
-        <div class="card">
-          <img
-            src="/imgs/translate.jpg"
-            class="card-img-top"
-            alt="Fissure in Sandstone"
-            style="height: 400px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Convert Any PDF</h5>
-            <p class="card-text">Use this tool to translate your documents</p>
-            <a href="/convert" class="btn btn-success">Go</a>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Tools</small>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="/imgs/unity.jpg"
-            class="card-img-top"
-            alt="Fissure in Sandstone"
-            style="height: 400px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Sanctuary Spaces</h5>
-            <p class="card-text">Find a community anywhere.</p>
-            <a href="/spaces" class="btn btn-success">Start Chatting</a>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Chatrooms</small>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="/imgs/passport.jpg"
-            class="card-img-top"
-            alt="Fissure in Sandstone"
-            style="height: 400px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Check Out Your Progress!</h5>
-            <p class="card-text">Keep Checking Those Tasks Off!</p>
-            <a href="/progress" class="btn btn-success">Navigate to Progress</a>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Tools</small>
-          </div>
-        </div>
-      </div>
-
-      <br />
     </div>
-    <% } %>
+    <br />
+
+    <div class="container">
+      <div id="#demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imgs/diversity.jpeg" alt="Los Angeles" class="d-block w-100" style="height: 400px;">
+          </div>
+          <div class="carousel-item">
+            <img src="imgs/engagement.jpeg" alt="Chicago" class="d-block w-100" style="height: 400px;">
+          </div>
+          <div class="carousel-item">
+            <img src="imgs/commitment.jpeg" alt="New York" class="d-block w-100" style="height: 400px;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    
+
+    <br>
+    <br>
+  
+ 
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="card"  style="border: 1px solid  rgba(135, 123, 123, 0.534);">
+            <img src="/imgs/translate.jpg" class="card-img-top" alt="card" style="height: 400px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Translate Your PDFs</h5>
+              <p class="card-text">Use this tool to translate your documents</p>
+              <a href="/convert" class="btn btn-success profileBtn">Let's get translating!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card" style="border: 1px solid  rgba(135, 123, 123, 0.534)">
+            <img src="/imgs/unity.jpg" class="card-img-top" alt="card" style="height: 400px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Sanctuary Spaces</h5>
+              <p class="card-text">Find a community anywhere.</p>
+              <a href="/spaces" class="btn btn-success profileBtn">Start Chatting!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card" style="border: 1px solid  rgba(135, 123, 123, 0.534)">
+            <img src="/imgs/passport.jpg" class="card-img-top" alt="card" style="height: 400px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Keep Track Of Your Journey</h5>
+              <p class="card-text">You'll get there.</p>
+              <a href="/progress" class="btn btn-success profileBtn">Navigate to Progress!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <br>
+ 
+
+    <br />
+  </div>
+  <% } %>
 
     <script src="main.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      crossorigin="anonymous"></script>
+</body>
+
 </html>

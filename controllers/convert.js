@@ -2,7 +2,6 @@ const pdfParse = require("pdf-parse");
 const translate = require("@iamtraction/google-translate");
 const Text = require("../models/Text");
 
-
 module.exports = {
   // get profile, sending user, posts
   getConvert: async (req, res) => {
@@ -65,9 +64,20 @@ module.exports = {
      
       res.render("storedTexts.ejs", {
         texts: texts});
-        console.log(texts)
+       
     } catch (err) {
       console.log(err);
     }
+  },
+  deleteStoredTexts: async (req, res) => {
+    console.log("deleting...")
+    try {
+        await Text.remove({ _id: req.params.id});
+  
+        console.log("deleted");
+        res.redirect('/storedTexts')
+      } catch (err) {
+        console.log(err);
+      }
   },
 };

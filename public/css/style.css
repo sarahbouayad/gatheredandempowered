@@ -12,6 +12,10 @@ body {
   border: white 1px solid;
 }
 
+.profileBtn{
+  font-family: 'Montserrat';
+
+}
 
 .loginh1 {
   color: rgba(13, 12, 12, 0.756);
@@ -32,7 +36,9 @@ body {
 
 /* video background */
 
-video { object-fit: fill; }
+video {
+  object-fit: fill;
+}
 
 #myVideo {
   position: fixed;
@@ -68,16 +74,14 @@ video { object-fit: fill; }
   font-family: 'Montserrat';
   font-weight: 500;
   font-size: 60px;
-  color:rgba(255, 255, 255, 0.992)
-
+  color: rgba(255, 255, 255, 0.992)
 }
 
 .tagline {
   font-family: 'Tangerine';
   font-family: 400;
   font-size: 40px;
-  color:rgba(255, 255, 255, 0.915)
-
+  color: rgba(255, 255, 255, 0.915)
 }
 
 .btn {
@@ -87,7 +91,24 @@ video { object-fit: fill; }
 }
 
 
+/* login image */
+
+.img-fluid {
+  height: 100%;
+}
+
+/* welcome back */
+
+.welcomeBackText {
+  font-family: 'Roboto'
+}
+
 /* navbar css */
+
+nav {
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
 
 .dropdown {
   float: left;
@@ -191,128 +212,17 @@ video { object-fit: fill; }
 
 textarea {
   width: 100%;
-  height: 600px;
+  height: 500px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
   font-size: 16px;
-  resize: none;
+  resize:both;
 }
 
-/* choose file styling from codepen */
-
-.file-upload {
-  display: block;
-  text-align: center;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 12px;
+li{
+  text-decoration: none;
 }
 
-.file-upload .file-select {
-  display: block;
-  border: 2px solid #dce4ec;
-  color: #34495e;
-  cursor: pointer;
-  height: 40px;
-  line-height: 40px;
-  text-align: left;
-  background: #FFFFFF;
-  overflow: hidden;
-  position: relative;
-}
-
-.file-upload .file-select .file-select-button {
-  background: #dce4ec;
-  padding: 0 10px;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-}
-
-.file-upload .file-select .file-select-name {
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 10px;
-}
-
-.file-upload .file-select:hover {
-  border-color: #34495e;
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload .file-select:hover .file-select-button {
-  background: #34495e;
-  color: #FFFFFF;
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload.active .file-select {
-  border-color: #3fa46a;
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload.active .file-select .file-select-button {
-  background: #3fa46a;
-  color: #FFFFFF;
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload .file-select input[type=file] {
-  z-index: 100;
-  cursor: pointer;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-
-.file-upload .file-select.file-select-disabled {
-  opacity: 0.65;
-}
-
-.file-upload .file-select.file-select-disabled:hover {
-  cursor: default;
-  display: block;
-  border: 2px solid #dce4ec;
-  color: #34495e;
-  cursor: pointer;
-  height: 40px;
-  line-height: 40px;
-  margin-top: 5px;
-  text-align: left;
-  background: #FFFFFF;
-  overflow: hidden;
-  position: relative;
-}
-
-.file-upload .file-select.file-select-disabled:hover .file-select-button {
-  background: #dce4ec;
-  color: #666666;
-  padding: 0 10px;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-}
-
-.file-upload .file-select.file-select-disabled:hover .file-select-name {
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 10px;
-}

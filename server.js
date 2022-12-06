@@ -8,9 +8,6 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
-const { JSDOM } = require("jsdom");
-const { window } = new JSDOM("");
-const $ = require("jquery")(window);
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const spacesRoutes = require("./routes/spaces");
@@ -18,9 +15,13 @@ const convertRoutes = require("./routes/convert");
 const progressRoutes = require("./routes/progress");
 const fileUpload = require("express-fileupload");
 
+
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+
+
+
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -37,6 +38,7 @@ app.set("view engine", "ejs");
 //Static Folder
 app.use("/", express.static("public"));
 app.use(fileUpload());
+
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));

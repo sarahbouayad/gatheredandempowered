@@ -14,14 +14,28 @@
       rel="stylesheet"
       href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300;500&family=Roboto:wght@100;300&&family=Tangerine&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+    ></script>
   </head>
 
   <body>
-    <section class="vh-100">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-6 text-black">
+    <section
+      class="vh-100 bg-image"
+      style="background-image: url('imgs/sun.jpg'); border-radius: 10px"
+    >
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
             <% if (locals.messages.errors) { %> <% messages.errors.forEach( el=>
             { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -29,68 +43,59 @@
             messages.info.forEach( el=> { %>
             <div class="alert alert-info"><%= el.msg %></div>
             <% }) %> <% } %>
-            <div class="px-5 ms-xl-4" style="padding-top: 40px">
-              <span class="h1 loginh1 fw-bold mb-0">Gathered & Empowered</span>
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15px">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">
+                    Gathered & Empowered
+                  </h2>
+                  <form action="/login" method="POST">
+                    <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
+                      Sign into your account
+                    </h4>
+
+                    <div class="form-group mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control form-control-lg"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        name="email"
+                      />
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="exampleInputPassword1" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control form-control-lg"
+                        id="exampleInputPassword1"
+                        name="password"
+                      />
+                    </div>
+
+                    <button type="submit" class="btn-outline-dark">
+                      Login
+                    </button>
+                  </form>
+
+                  <hr />
+                  <p class="small mb-5 pb-lg-2">
+                    Don't have an account?<a class="text-muted" href="/signup"
+                      >Signup</a
+                    >
+                  </p>
+                  <p class="small mb-5 pb-lg-2">
+                    Or go <a href="/index">home</a>.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <div
-              class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5"
-            >
-              <form action="/login" method="POST" style="width: 23rem">
-                <h3
-                  class="fw-normal mb-3 pb-3 loginText"
-                  style="letter-spacing: 1px"
-                >
-                  Log in
-                </h3>
-
-                <div class="form-outline mb-4">
-                    <label for="exampleInputEmail1" class="form-label"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    name="email"
-                  />
-                </div>
-
-                <div class="form-outline mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="exampleInputPassword1"
-                      name="password"
-                    />
-                </div>
-
-                <div class="pt-1 mb-4">
-                  <button type="submit" class="btn btn-dark btn-md btn-block">
-                    Login
-                  </button>
-                </div>
-
-                <p class="small mb-5 pb-lg-2">
-                  Don't have an account?<a class="text-muted" href="/signup"
-                    >Signup</a
-                  >
-                </p>
-                <p class="small mb-5 pb-lg-2">
-                  Or go <a href="/index">home</a>.
-                </p>
-              </form>
-            </div>
-          </div>
-          <div class="col-sm-6 px-0 d-none d-sm-block">
-            <img
-              src="imgs/everyone.jpg"
-              alt="Login image"
-              class="w-100 vh-100"
-              style="object-fit: cover; object-position: left"
-            />
           </div>
         </div>
       </div>
@@ -100,5 +105,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="/jquery/jquery.js"></script>
   </body>
 </html>
