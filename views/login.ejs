@@ -29,7 +29,7 @@
   <body>
     <section
       class="vh-100 bg-image"
-      style="background-image: url('imgs/sun.jpg'); border-radius: 10px"
+      style="background-image: url('imgs/diversity.jpeg'); background-repeat: no-repeat; background-size: cover;"
     >
       <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
@@ -46,16 +46,16 @@
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
               <div class="card" style="border-radius: 15px">
                 <div class="card-body p-5">
-                  <h2 class="text-uppercase text-center mb-5">
+                  <h2 class="text-uppercase text-center logintexts mb-5">
                     Gathered & Empowered
                   </h2>
                   <form action="/login" method="POST">
-                    <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
+                    <h4 class="fw-normal mb-3 pb-3 logintexts" style="letter-spacing: 1px">
                       Sign into your account
                     </h4>
 
                     <div class="form-group mb-3">
-                      <label for="exampleInputEmail1" class="form-label"
+                      <label for="exampleInputEmail1" class="form-label logintexts"
                         >Email</label
                       >
                       <input
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                      <label for="exampleInputPassword1" class="form-label"
+                      <label for="exampleInputPassword1" class="form-label logintexts"
                         >Password</label
                       >
                       <input
@@ -79,18 +79,17 @@
                       />
                     </div>
 
-                    <button type="submit" class="btn-outline-dark">
+                    <button type="submit" class="btn-danger loginButton">
                       Login
                     </button>
                   </form>
 
                   <hr />
-                  <p class="small mb-5 pb-lg-2">
-                    Don't have an account?<a class="text-muted" href="/signup"
-                      >Signup</a
-                    >
+                  <p class="small mb-5 pb-lg-2 logintexts">
+                    Don't have an account?<a class="text-muted logintexts" href="/signup"
+                      ><strong>Signup</strong></a>
                   </p>
-                  <p class="small mb-5 pb-lg-2">
+                  <p class="small mb-5 pb-lg-2 logintexts">
                     Or go <a href="/index">home</a>.
                   </p>
                 </div>

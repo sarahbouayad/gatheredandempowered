@@ -15,6 +15,9 @@
       href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300;500&family=Roboto:wght@100;300&&family=Tangerine&display=swap"
+    rel="stylesheet">
   </head>
 
   <body>
@@ -30,7 +33,7 @@
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
               <div class="card" style="border-radius: 15px">
                 <div class="card-body p-5">
-                  <h2 class="text-uppercase text-center mb-5">
+                  <h2 class="text-uppercase text-center mb-5 logintexts">
                     Create an account
                   </h2>
                   <section class="col-6 mt-5">
@@ -47,7 +50,7 @@
                 <% } %>
 
                     <form action="/signup" method="POST">
-                      <div class="mb-3 form-group">
+                      <div class="mb-3 form-group logintexts">
                         <label for="userName" class="form-label"
                           >User Name</label
                         >
@@ -60,7 +63,7 @@
                       </div>
 
                       <div class="form-group mb-3">
-                        <label for="exampleInputEmail1" class="form-label"
+                        <label for="exampleInputEmail1" class="form-label logintexts"
                           >Email address</label
                         >
                         <input
@@ -70,13 +73,13 @@
                           aria-describedby="emailHelp"
                           name="email"
                         />
-                        <div id="emailHelp" class="form-text">
+                        <div id="emailHelp" class="form-text logintexts">
                           We'll never share your email with anyone else.
                         </div>
                       </div>
 
                       <div class="mb-3 form-group">
-                        <label for="password" class="form-label"
+                        <label for="password" class="form-label logintexts"
                           >Password</label
                         >
                         <input
@@ -87,7 +90,7 @@
                         />
                       </div>
                       <div class="mb-3 form-group">
-                        <label for="confirmPassword" class="form-label"
+                        <label for="confirmPassword" class="form-label logintexts"
                           >Confirm Password</label
                         >
                         <input
@@ -98,7 +101,7 @@
                         />
                       </div>
                       <br />
-                      <button type="submit" class="btn btn-danger btn-lg">
+                      <button type="submit" class="btn btn-danger btn-lg" style="font-family: 'Montserrat';">
                         Signup
                       </button>
                     </form>

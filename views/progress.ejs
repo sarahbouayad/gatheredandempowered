@@ -5,10 +5,14 @@
   <title>Progress</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/43daf91e79.js" crossorigin="anonymous"></script>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300;500&family=Roboto:wght@100;300&&family=Tangerine&display=swap"
+  rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -50,8 +54,8 @@
           <form class=”form-inline” class="" action="/messages" method="POST" role="form">
             <div class="form-group">
               <div class="col-6 col-sm-4">
-                <h4><strong>Keep It Going, </strong>
-                  <%= user.userName %><br>
+                <h4>Keep It Going,
+                  <strong><%= user.userName %></strong><br>
                 </h4>
               </div>
             </div>
@@ -60,65 +64,60 @@
       </div>
     </div>
   </div>
+  <br>
 
-  <div class="container">
+
+  
+
+  <div class="input-container">
     <form class="tasks" action="/progress/createTask/" method="POST">
-      <input type="text" placeholder="Enter Name" name="clientName" style="margin: 1%;">
-      <input type="text" placeholder="temptext" name="taskDescription">
-      <button class="submit btn-sm btn-light" type="submit">Submit</button>
+      <input class="input-field" type="text" placeholder="Type of Task" name="clientName">
+      <input class="input-field" type="text" placeholder="Add New Task" name="taskDescription">
+      <button class="submit btn-sm btn-light tasksBtn" type="submit">Submit</button>
     </form>
   </div>
- 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Pending Tasks</h2>
-            <h6>Once tasks are completed, mark it as complete</h6>
-            <% if(tasks.length==0) {%>
-              <p class="p">No Tasks!</p>
-              <%} %>
-                <ul class="row list-unstyled">
-                  <% for(var i=0; i<tasks.length; i++) { %>
-                    <div class="pendingTasks">
-                      <li class="col-6 justify-content-between mt-5">
-                        <span>Name: <%= tasks[i].clientName %></span>
+  
+      <div class="container-fluid taskContainer">
+        <span class="headerTasks">Tasks</span>
+        
+          <span class="headerTasks">Incomplete</span>
+              <ul class="row list-unstyled todo">
+                <% for(var i=0; i<tasks.length; i++) { %>
+                  <div class="pendingTasks d-flex flex-row">
+                    <li class="col-6 justify-content-between mt-3">
+                      <span>Name: <%= tasks[i].clientName %></span>
+                  
                         <%= tasks[i].taskDescription %>
+                        <form action="/progress/completeTasks/<%= tasks[i].id %>?_method=PUT"
+                          method="POST">
+                          <button class="btn bi bi-check-square-fill" type="submit"></button>
+                        </form>
+                   
+                      
 
-
-                          <form class="col-1" action="/progress/completeTasks/<%= tasks[i].id %>?_method=PUT"
-                            method="POST">
-                            <button class="btn btn-primary bi bi-check-square-fill" type="submit"></button>
-                          </form>
-
-                      </li>
-                    </div>
-                  <% } %>
+                    </li>
+                  </div>
+                <% } %>
                 </ul>
+      
+       
 
-          </div>
-
-          <div class="col-md-6">
-            <h2>Completed Tasks</h2>
-            <h6>Keep Track Completed Tasks</h6>
-            <% if(completeTasks.length==0) {%>
-              <p class="p">Good Job!</p>
-              <%} %>
-            <ul class="row list-unstyled">
-              <li>
+        
+          <span class="headerTasks">Complete</span>
+            <ul class="row list-unstyled todocompleted">
+              <li class="col-6 justify-content-between mt-3">
                 <% for(let i=0; i < completeTasks.length; i++) { %>
-                  <span>Completed: <%= completeTasks[i].clientName %> task</span>
-                  <p>Task: <%= completeTasks[i].taskDescription %>
-                  </p>
+                  <div class="d-flex flex-row">
+                    <form action="/progress/deleteTask/<%= completeTasks[i].id %>?_method=DELETE" method="POST">
+                      <button class="btn bi bi-trash" type="submit"></button>
+                    </form>
+                    <span>You completed the <%= completeTasks[i].clientName %> task!</span>
+                  </div>
+                
                   <!-- using form to pass the id of the post as a query parameter to be able to target which post to delete -->
-                  <form action="/progress/deleteTask/<%= completeTasks[i].id %>?_method=DELETE" method="POST"
-                    class="col-3">
-                    <button class="btn btn-primary bi bi-trash" type="submit"></button>
-                  </form>
               </li>
               <% } %>
             </ul>
-          </div>
-
 
         </div>
       </div>
@@ -126,8 +125,39 @@
 
     </div>
 
+    <br>
+    <br>
+    <br>
+    <footer id="footer" class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="text-white mb-4">
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" target="_blank" rel="noopener noreferrer"
+                  href="https://twitter.com/sarahbouayad" role="button"><i class="fab fa-twitter social"></i></a>
 
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" target="_blank" rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/sarahbouayad/" role="button"><i
+                      class="fab fa-linkedin-in social"></i></a>
 
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/sarahbouayad" role="button"><i class="fab fa-github social"></i></a>
+          </section>
+          <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3 footerText" style="background-color: rgb(51,51,51);">
+          © 2022 Copyright:
+          <a class="text-white footerText" target="_blank" rel="noopener noreferrer"
+              href="https://www.sarahbouayad.com/">Sarah Bouayad</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
 
 
 

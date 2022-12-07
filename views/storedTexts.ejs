@@ -2,18 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Convert PDF</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <script src="https://kit.fontawesome.com/43daf91e79.js" crossorigin="anonymous"></script>
+  <title>Convert PDF</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/43daf91e79.js" crossorigin="anonymous"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300;500&family=Roboto:wght@100;300&&family=Tangerine&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
 </head>
 
-<body style="background-image:url('imgs/blue.jpg');background-repeat: no-repeat;">
+<body style="background-image:url('imgs/language.jpg');background-repeat: no-repeat;">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -43,35 +47,86 @@
       </div>
     </div>
   </nav>
+  <br>
+  <div class="container modalContainer">
+    <ul class="storedTextsUL">
+      <% for(let i=0; i < texts.length; i++) { %>
+        <li id="list">
+          <div class="row mt-3">
+            <button type="button" class="btn btn-primary" id="modalBtnStyle" data-mdb-toggle="modal" data-mdb-target="#myModal">
+              Open Stored Texts
+            </button>
+          </div>
+          <!-- the modal -->
+          <div class="modal top fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-mdb-backdrop="true" data-mdb-keyboard="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Previously Translate Texts</h5>
+                  <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <textarea><%= texts[i].extractedText %></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal" style="background-color:black; color: white; font-family: 'Montserrat'"; >
+                    Close
+                  </button>
+                  <form action="/convert/deleteStoredTexts/<%= texts[i]._id %>?_method=DELETE" method="POST"
+                    class="col-3">
+                    <button class="btn btn-primary bi bi-trash" id="modalBtnStyle" type="submit"> Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <h1>STORED TEXTS</h1>
-    
-    <ul>
-        <% for(let i=0; i < texts.length; i++) { %>
-          <li>
-            <textarea><%= texts[i].extractedText %>
-            </textarea>
+        </li>
+        <% } %>
 
-            <form
-            action="/convert/deleteStoredTexts/<%= texts[i]._id %>?_method=DELETE" 
-            method="POST" 
-            class="col-3"
-            >
-              <button class="btn btn-primary bi bi-trash" type="submit"></button>
-            </form>
-            <% } %>
-          </li>
-            
+
     </ul>
+  </div>
+
+  <footer id="footer" class="bg-dark text-center">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" target="_blank" rel="noopener noreferrer" href="https://twitter.com/sarahbouayad" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/sarahbouayad/" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" target="_blank" rel="noopener noreferrer" href="https://github.com/sarahbouayad" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3 footerText" style="background-color: rgba(6, 6, 6, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white footerText" target="_blank" rel="noopener noreferrer" href="https://www.sarahbouayad.com/">Sarah Bouayad</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

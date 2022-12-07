@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const progressSchema = new mongoose.Schema({
-  clientName: {
-    type: String,
-    required: true,
-  },
   taskDescription: {
     type: String,
     required: true,
