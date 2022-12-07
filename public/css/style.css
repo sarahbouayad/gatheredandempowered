@@ -533,3 +533,20 @@ i {
   width: 100%;
   height: 100px;
 }
+
+/* media queries */
+
+@media screen and (max-width: 581px){
+  .jumbotron{
+    padding: 4%;
+  }
+}
+
+@media screen and (max-width: 514px){
+  .indexTitle{
+    font-size: 30px;
+  }
+  .tagline{
+    font-size: 26px;
+  }
+}
