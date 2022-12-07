@@ -537,12 +537,18 @@ i {
 /* media queries */
 
 @media screen and (max-width: 581px){
+  .gatheredVideoOverlay{
+    font-size: 37px;
+  }
   .jumbotron{
     padding: 4%;
   }
 }
 
 @media screen and (max-width: 514px){
+  .gatheredVideoOverlay{
+    font-size: 30px;
+  }
   .indexTitle{
     font-size: 30px;
   }
