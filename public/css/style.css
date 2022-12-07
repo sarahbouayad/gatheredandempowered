@@ -556,3 +556,9 @@ i {
     font-size: 26px;
   }
 }
+
+@media screen and (max-width: 400px){
+  .gatheredVideoOverlay{
+    font-size: 25px;
+  }
+}
