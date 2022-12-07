@@ -72,8 +72,8 @@
   <div class="input-container">
     <form class="tasks" action="/progress/createTask/" method="POST">
       <input class="input-field" type="text" placeholder="Type of Task" name="clientName">
-      <input class="input-field" type="text" placeholder="Add New Task" name="taskDescription">
-      <button class="submit btn-sm btn-light tasksBtn" type="submit">Submit</button>
+      <input class="input-field" type="text" placeholder="Add A New Task" name="taskDescription">
+      <button class="btn-sm btn-light tasksBtn" type="submit">Submit</button>
     </form>
   </div>
   
@@ -85,9 +85,8 @@
                 <% for(var i=0; i<tasks.length; i++) { %>
                   <div class="pendingTasks d-flex flex-row">
                     <li class="col-6 justify-content-between mt-3">
-                      <span>Name: <%= tasks[i].clientName %></span>
-                  
-                        <%= tasks[i].taskDescription %>
+                      <span><%= tasks[i].clientName %> :</span>
+                        <span><%= tasks[i].taskDescription %></span>
                         <form action="/progress/completeTasks/<%= tasks[i].id %>?_method=PUT"
                           method="POST">
                           <button class="btn bi bi-check-square-fill" type="submit"></button>

@@ -21,12 +21,11 @@ module.exports = {
     console.log("the task is being got")
     try {
       // this is the order schema for post for the order page ejs
-      const tasks = await Progress.find({ clientName: req.body.clientName })
+      const tasks = await Progress.find({clientName: req.body.clientName})
       
       // objs from data base, located in Order schema. rendering on order ejs
       res.render("/progress", { 
-        clientName: req.body.clientName,
-        taskDescription: req.body.taskDescription
+        taskDescription: req.body.taskDescription,
        });
     } catch (err) {
       console.log(err);
@@ -35,6 +34,7 @@ module.exports = {
   // create Task
   createTask: async (req, res) => {
     console.log("task was created");
+    console.log(req.body, 'string')
     try {
       await Progress.create({
         clientName: req.body.clientName,
