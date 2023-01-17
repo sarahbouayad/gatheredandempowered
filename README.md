@@ -6,7 +6,7 @@
 
 ## Demo
 
-![Screen Shot 2022-11-07 at 12 44 47 AM](https://user-images.githubusercontent.com/112355619/200235749-254a4704-787f-43c3-87f9-db258e811661.png)
+![demodaytest](https://user-images.githubusercontent.com/112355619/212995866-c9d5e56f-83e9-4b44-b91c-fa39fc9d3132.gif)
 
 
 ## Tech Stack
